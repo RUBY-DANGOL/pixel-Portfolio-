@@ -1,0 +1,42 @@
+[
+    { 
+        "image": "/arts/1.jpg",
+        "alt": "Art 1"
+    },
+    { 
+        "image": "/arts/2.jpg",
+        "alt": "Art 2"
+    },
+    { 
+        "image": "/arts/3.jpg",
+        "alt": "Art 3"
+    },
+    { 
+        "image": "/arts/4.jpg",
+        "alt": "Art 4"
+    },
+    { 
+        "image": "/arts/5.jpg",
+        "alt": "Art 5"
+    },
+    { 
+        "image": "/arts/6.jpg",
+        "alt": "Art 6"
+    },
+    { 
+        "image": "/arts/7.jpg",
+        "alt": "Art 7"
+    },
+    { 
+        "image": "/arts/8.jpg",
+        "alt": "Art 8"
+    },
+    { 
+        "image": "/arts/9.jpg",
+        "alt": "Art 9"
+    },
+    { 
+        "image": "/arts/10.jpg",
+        "alt": "Art 10"
+    }
+]

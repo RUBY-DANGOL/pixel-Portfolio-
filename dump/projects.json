@@ -1,0 +1,37 @@
+[
+  {
+    "id": "tomatobot",
+    "name": "TomatoBot",
+    "description": "A smart robotic arm that uses object detection to harvest tomatoes and semantic segmentation with central line estimation to navigate field and arms that is controled using the inverse kinematics.",
+    "thumbnail": "/project_image/tomatobot.png",
+    "video": "/videos/tomatobot-demo.mp4"
+  },
+  {
+    "id": "doclipi",
+    "name": "DocLipi",
+    "description": "An Intelligent Document Classifier and OCR Solution by combining  image classification and Vision Large Language Models to accurately OCR and extract structured data from Nepali and English documents.",
+    "thumbnail": "/project_image/doclipiimg.png",
+    "video": "/demo_video/doclipivid.mp4"
+  },
+  {
+    "id": "mamacare",
+    "name": "MamaCare",
+    "description": "Maternal health app that predicts risks during pregnancy using AI and gives personalized nutrition suggestions.",
+    "thumbnail": "/project_image/mamacare.jpg",
+    "video": "/demo_video/mamacaredemo.mp4"
+  },
+  {
+    "id": "Featherfinder",
+    "name": "FeatherFinder",
+    "description": " FeatherFinder makes use of deep learning with pre-trained models, such as DenseNet-121, ResNet-152, and VGG16, to classify bird species from images.It includes 62 classes of birds.",
+    "thumbnail": "/project_image/featherfinder.png",
+    "video": "/demo_video/featherfinderdemo.mp4"
+  },
+  {
+    "id": "Jiffify",
+    "name": "Jiffify",
+    "description": "Jiffify redesigns the current JIFFY APP adding features like AI food Recommendation, AR Food Menu Viewing, Games and other to make the app more interactive.",
+    "thumbnail": "/project_image/jiffy.jpg",
+    "video": "/demo_video/featherfinderdemo.mp4"
+  }
+]

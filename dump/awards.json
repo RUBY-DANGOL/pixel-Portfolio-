@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Best Presenter – Global IME Bank AI/ML Hackathon 2025",
+    "description": "Developed DocLipi: an intelligent OCR and document classifier for Nepali and English texts, powered by vision LLMs.",
+    "image": "/doclipi.jpg",
+    "alt": "DocLipi"
+  },
+  {
+    "title": "1st Runner-up – Jiffy Hackathon",
+    "description": "Reimagined the JIFFY App with AI-based food recommendations, AR menu previews, games, and short-form reels.",
+    "image": "/jiffy.jpg",
+    "alt": "Jiffy Hackathon"
+  } 
+]
