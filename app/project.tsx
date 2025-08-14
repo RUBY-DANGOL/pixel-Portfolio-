@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 // @ts-ignore
-import projects from '@/dump/projects.json';
+import projects from '../dump/projects.json';
 
 export default function Project() {
   return (
