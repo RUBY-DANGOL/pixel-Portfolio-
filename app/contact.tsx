@@ -3,11 +3,20 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+type Social = {
+  name: string;
+  href: string;
+  logo: string;
+  size: number;
+};
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -18,18 +27,13 @@ export default function Contact() {
     setForm({ name: '', email: '', message: '' });
   };
 
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      href: 'https://github.com/RUBY-DANGOL',
-      logo: '/icons/git.png',
-      size: 40,
-    },
+  const socialLinks: Social[] = [
+    { name: 'GitHub', href: 'https://github.com/RUBY-DANGOL', logo: '/icons/git.png', size: 40 },
     {
       name: 'Gmail',
       href: 'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpgRQKctwrnBzqgKMBwcdZgVdhnVvRxgqPSnLvzcjcGDqsDLQdJHmHrbfVJmNzkwvDcfdB',
       logo: '/icons/mail.png',
-      size: 55, // bigger size
+      size: 55,
     },
     {
       name: 'LinkedIn',
@@ -37,20 +41,13 @@ export default function Contact() {
       logo: '/icons/linkedin.png',
       size: 40,
     },
-    {
-      name: 'Instagram',
-      href: 'https://www.instagram.com/_rubina_dangol_/',
-      logo: '/icons/insta.png',
-      size: 72, // biggest size
-    },
+    { name: 'Instagram', href: 'https://www.instagram.com/_rubina_dangol_/', logo: '/icons/insta.png', size: 72 },
   ];
 
   return (
     <div className="min-h-screen px-6 py-10 bg-white text-stone-600">
       <h1 className="text-4xl font-bold mb-4 text-center">Contact Me</h1>
-      <p className="text-lg text-center mb-8">
-        Feel free to reach out or leave your message below 
-      </p>
+      <p className="text-lg text-center mb-8">Feel free to reach out or leave your message below</p>
 
       <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Social Icons */}
@@ -73,13 +70,21 @@ export default function Contact() {
                   height={social.size}
                   className="object-contain"
                 />
-                
               </a>
-              
             ))}
-            <div className="flex justify-center mb-6">
-                  <img src="/dog.gif" alt="Cute Dog" className="w-80 h-auto" />
-                </div>
+
+            {/* GIF replaced with Next/Image to satisfy @next/next/no-img-element */}
+            <div className="flex justify-center mb-6 w-full">
+              <Image
+                src="/dog.gif"
+                alt="Cute dog waving hello"
+                width={300}        
+                height={100}       
+                unoptimized        
+                className="w-80 h-auto"
+                priority
+              />
+            </div>
           </div>
         </div>
 
@@ -90,6 +95,7 @@ export default function Contact() {
               Name
             </label>
             <input
+              id="name"
               type="text"
               name="name"
               required
@@ -104,6 +110,7 @@ export default function Contact() {
               Email
             </label>
             <input
+              id="email"
               type="email"
               name="email"
               required
@@ -118,6 +125,7 @@ export default function Contact() {
               Message
             </label>
             <textarea
+              id="message"
               name="message"
               rows={4}
               required
@@ -134,9 +142,7 @@ export default function Contact() {
             Send Message
           </button>
 
-          {submitted && (
-            <p className="text-rose-300 mt-2">Thanks! Your message has been sent 💌</p>
-          )}
+          {submitted && <p className="text-rose-300 mt-2">Thanks! Your message has been sent 💌</p>}
         </form>
       </div>
     </div>

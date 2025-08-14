@@ -1,77 +1,77 @@
-'use client'
-import { useEffect, useState, useRef } from 'react'
-import Image from 'next/image'
-import AboutMe from './aboutme'
-import Project from './project'
-import Hobby from './hobby'
-import Contact from './contact'
+'use client';
+import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
+import AboutMe from './aboutme';
+import Project from './project';
+import Hobby from './hobby';
+import Contact from './contact';
 
 export default function Page() {
-  const [time, setTime] = useState('')
-  const city = 'Nepal'
+  const [time, setTime] = useState('');
+  const city = 'Nepal';
 
-  const audioRef = useRef<HTMLAudioElement>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [progress, setProgress] = useState(0)
-  const [volume, setVolume] = useState(1)
-  const [duration, setDuration] = useState(0)
-  const [currentTime, setCurrentTime] = useState(0)
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [volume, setVolume] = useState(1);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
-    const now = new Date()
-    setTime(now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }))
+    const now = new Date();
+    setTime(now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }));
     const interval = setInterval(() => {
-      const now = new Date()
-      setTime(now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }))
-    }, 60000)
-    return () => clearInterval(interval)
-  }, [])
+      const now = new Date();
+      setTime(now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }));
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   const togglePlay = () => {
-    const audio = audioRef.current
-    if (!audio) return
+    const audio = audioRef.current;
+    if (!audio) return;
 
     if (audio.paused) {
-      audio.play()
-      setIsPlaying(true)
+      audio.play();
+      setIsPlaying(true);
     } else {
-      audio.pause()
-      setIsPlaying(false)
+      audio.pause();
+      setIsPlaying(false);
     }
-  }
+  };
 
   const handleTimeUpdate = () => {
-    const audio = audioRef.current
+    const audio = audioRef.current;
     if (audio) {
-      setCurrentTime(audio.currentTime)
-      setDuration(audio.duration || 0)
+      setCurrentTime(audio.currentTime);
+      setDuration(audio.duration || 0);
       if (audio.duration > 0) {
-        setProgress((audio.currentTime / audio.duration) * 100)
+        setProgress((audio.currentTime / audio.duration) * 100);
       }
     }
-  }
+  };
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const audio = audioRef.current
-    const newTime = (parseFloat(e.target.value) / 100) * duration
+    const audio = audioRef.current;
+    const newTime = (parseFloat(e.target.value) / 100) * duration;
     if (audio) {
-      audio.currentTime = newTime
+      audio.currentTime = newTime;
     }
-  }
+  };
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newVolume = parseFloat(e.target.value)
+    const newVolume = parseFloat(e.target.value);
     if (audioRef.current) {
-      audioRef.current.volume = newVolume
+      audioRef.current.volume = newVolume;
     }
-    setVolume(newVolume)
-  }
+    setVolume(newVolume);
+  };
 
   const formatTime = (time: number): string => {
-    const minutes = Math.floor(time / 60)
-    const seconds = Math.floor(time % 60)
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
-  }
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
 
   return (
     <div
@@ -108,7 +108,7 @@ export default function Page() {
               Full-Stack Developer | AI Engineer<br />
               Interested in Robotics<br />
               <span className="text-sm text-stone-400 font-normal non-italic">
-                There are no experts. There's only us.
+                There are no experts. There&apos;s only us.
               </span>
             </p>
 
@@ -123,10 +123,17 @@ export default function Page() {
             </div>
           </section>
 
-
           <div className="col-span-2 w-full flex flex-col items-center">
             <div className="w-[300px] h-[300px] shadow-xl border-4 border-gray-300 rounded-full flex items-center justify-center">
-              <Image src="/cd.png" alt="Rotating CD" width={500} height={500} className={`rounded-full animate-spin-slow ${isPlaying ? 'animate-running' : 'animate-paused'}`} />
+              <Image
+                src="/cd.png"
+                alt="Rotating CD"
+                width={500}
+                height={500}
+                className={`rounded-full animate-spin-slow ${
+                  isPlaying ? 'animate-running' : 'animate-paused'
+                }`}
+              />
             </div>
 
             <div className="mt-4 w-full flex flex-col items-center space-y-4">
@@ -136,7 +143,9 @@ export default function Page() {
                 preload="auto"
                 loop
                 onTimeUpdate={handleTimeUpdate}
-                onLoadedMetadata={() => { if (audioRef.current) setDuration(audioRef.current.duration) }}
+                onLoadedMetadata={() => {
+                  if (audioRef.current) setDuration(audioRef.current.duration);
+                }}
               />
 
               <button
@@ -148,12 +157,28 @@ export default function Page() {
 
               <div className="w-full max-w-xs accent-stone-600 text-center text-sm text-stone-600">
                 {formatTime(currentTime)} / {formatTime(duration)}
-                <input type="range" min="0" max="100" value={progress} onChange={handleSeek} className="w-full max-w-xs h-1 bg-gray-300 rounded-full cursor-pointer" />
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={progress}
+                  onChange={handleSeek}
+                  className="w-full max-w-xs h-1 bg-gray-300 rounded-full cursor-pointer"
+                />
               </div>
 
               <div className="w-full accent-stone-600 max-w-xs flex items-center space-x-2">
                 <label htmlFor="volume" className="text-sm">Volume</label>
-                <input id="volume" type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className="w-full h-1 bg-gray-300 rounded-full cursor-pointer" />
+                <input
+                  id="volume"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value={volume}
+                  onChange={handleVolumeChange}
+                  className="w-full h-1 bg-gray-300 rounded-full cursor-pointer"
+                />
               </div>
             </div>
           </div>
@@ -191,5 +216,5 @@ export default function Page() {
         `}</style>
       </section>
     </div>
-  )
+  );
 }
