@@ -41,7 +41,7 @@ export default function Contact() {
       logo: '/icons/linkedin.png',
       size: 40,
     },
-    { name: 'Instagram', href: 'https://www.instagram.com/_rubina_dangol_/', logo: '/icons/insta.png', size: 72 },
+    { name: 'Instagram', href: 'https://www.instagram.com/ruby.code___?utm_source=ig_web_button_share_sheet&igsh=Y2RxamdydWEwNGhn', logo: '/icons/insta.png', size: 72 },
   ];
 
   return (
@@ -78,8 +78,8 @@ export default function Contact() {
               <Image
                 src="/dog.gif"
                 alt="Cute dog waving hello"
-                width={300}        
-                height={100}       
+                width={75}        
+                height={25}       
                 unoptimized        
                 className="w-80 h-auto"
                 priority

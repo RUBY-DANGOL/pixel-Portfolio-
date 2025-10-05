@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'spin-slow': 'spin 6s linear infinite',
+        'spin-slow': 'spin 6s linear infinite', // ✅ slow spin
       },
       keyframes: {
         spin: {
@@ -17,10 +17,8 @@ module.exports = {
           to: { transform: 'rotate(360deg)' },
         },
       },
-      fontFamily: {
-        pixel: ['MyBitmapFont', 'monospace'], // fallback is monospace
-      },
-    },
+    }
+
   },
   plugins: [],
 }
