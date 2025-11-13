@@ -234,7 +234,7 @@ export default function Page() {
 
 
    
-        </main>
+        </main> 
 
         <div className="h-16 sm:h-24 bg-transparent"></div>
 
@@ -258,3 +258,4 @@ export default function Page() {
     </div>
   );
 }
+
